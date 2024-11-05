@@ -1,0 +1,19 @@
+<div{{attributes.addClass('card').addClass(extra_classes|default([])) }}>
+  <div class="card__content">
+    <div class="card__title">
+      <h3>{{ title }}</h3>
+    </div>
+    
+    <div class="card__summary">
+      <p>{{ summary }}</p>
+    </div>
+    
+    <a class="button button--ghost">
+      {{ link }}
+    </a>
+  </div>
+  
+  <div class="card__image">
+    {{ image }}
+  </div>
+</div>

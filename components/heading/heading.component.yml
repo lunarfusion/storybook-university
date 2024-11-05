@@ -1,0 +1,41 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Heading
+
+props:
+  type: object
+  properties:
+    html_tag:
+      type: string
+      title: Level
+      description: Level of the heading
+      enum:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: h2
+          
+slots:
+  title_prefix:
+    type: object
+    title: Title prefix
+  title_suffix:
+    type: object
+    title: Title suffix
+  content:
+    title: Content
+    required: true
+    description: Content of the Heading.
+    examples:
+    - Sphinx of Black Quartz, Judge My Vow
+      
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      section_heading:
+        title: Section Heading H2
+        props:
+          extra_classes:
+            - section-heading

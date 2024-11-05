@@ -1,0 +1,76 @@
+:root {
+  --em-size-baseline: 16px;
+  
+  --em-size-container-padding: 16px;
+  --em-size-col-padding: 24px;
+  
+  /*** Character width limiter ***/
+  --em-size-charlimit: 75ch;
+  /* max width for normal size text */
+  --em-size-charlimit-md: 60ch;
+  /* max width limit for medium size text */
+  --em-size-charlimit-lg: 55ch;
+  /* max width limit for large size text */
+  
+  /*** Container widths ***/
+  --em-size-container-width: 1200px;
+  --em-size-container-width-lg: 1800px;
+  
+  /*** Breakpoints ***/
+  --em-size-breakpoint-extra-large: 1200px;
+  --em-size-breakpoint-large: 992px;
+  --em-size-breakpoint-med: 768px;
+  --em-size-breakpoint-small: 576px;
+  
+  /*** Text Sizes ***/
+  --em-size-text-small: 12px;
+  --em-size-text-med: 16px;
+  --em-size-text-lrg: 22px;
+  --em-size-text-extra-lrg: 28px;
+  
+  /*** Focus Indicator ***/
+  --em-size-thickness-focus-indicator: 2px;
+  --em-size-border-rad-focus-indicator: 4px;
+  --em-size-gap-focus-indicator: 2px;
+  
+  /**** Actions and indicators *****/
+  --em-size-border-active-item: 9px;
+  
+  /*** Border Width ***/
+  --em-size-thickness-component: 1.5px;
+  
+  /*** Border Radius ***/
+  --em-size-radius-extra-sm: 2px;
+  --em-size-radius-sm: 4px;
+  --em-size-radius-med: 6px;
+  --em-size-radius-lrg: 8px;
+  --em-size-radius-button: 20px;
+  
+  --em-size-radius-component: var(--em-size-radius-sm);
+  
+  --em-size-button-margin: 0.5rem;
+  --em-size-block-button: 40px;
+  
+  --em-size-inner-vert-component: 1.25rem;
+  --em-size-inner-horiz-component: 0.75rem;
+  
+  /* Main Nav */
+  --em-size-menu-item: 50px;
+  --em-size-menu-dropdown-icon: 1.25rem;
+  
+  --em-size-mobile-menu-toggle: 4.5rem;
+  
+  
+  @media (max-width: 992px) {
+    --em-size-col-padding: 16px;
+    --em-size-container-padding: 12px;
+  }
+  
+  @media (max-width: 768px) {
+    & {}
+  }
+  
+  @media (max-width: 576px) {
+    & {}
+  }
+}

@@ -1,0 +1,76 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Button
+
+props:
+  type: object
+  properties:
+    html_tag:
+      type: string
+      description: Button is either a button or a link that looks like a button.
+      enum:
+        - button
+        - a
+    url:
+      type: string
+      title: Button URL
+      format: iri-reference
+    state:
+      type: string
+      title: State
+      description: Interaction state of button
+      enum:
+        - default
+        - hover
+        - focus
+        - active
+        
+slots:
+    # Content to display in the button
+    content:
+        title: Content
+        required: true
+        description: Content of the button.
+        examples:
+        - Read more
+    icon:
+        type: string
+        title: Icon
+        required: false
+        description: Icon Name
+        enum:
+          - arrow-forward
+          - arrow-backward
+          
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      primary:
+        title: Primary
+        props:
+          extra_classes:
+            - button--primary
+      secondary:
+            title: Secondary
+            props:
+              extra_classes:
+                - button--secondary
+      ghost:
+            title: Ghost
+            props:
+              extra_classes:
+                - button--ghost
+      nav:
+            title: Nav
+            props:
+              extra_classes:
+                - button--nav
+      circle:
+            title: Circle
+            props:
+              extra_classes:
+                - button--circle
+      small:
+            title: Small
+            props:
+              extra_classes:
+                - button--small                    
