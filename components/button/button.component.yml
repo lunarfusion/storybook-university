@@ -14,15 +14,6 @@ props:
       type: string
       title: Button URL
       format: iri-reference
-    state:
-      type: string
-      title: State
-      description: Interaction state of button
-      enum:
-        - default
-        - hover
-        - focus
-        - active
         
 slots:
     # Content to display in the button

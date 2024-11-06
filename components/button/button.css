@@ -1,12 +1,3 @@
-@import "../vars/vars-colors-primatives.css";
-@import "../vars/vars-colors-semantics.css";
-@import "../vars/vars-fonts.css";
-@import "../vars/vars-shadows.css";
-@import "../vars/vars-spacing.css";
-@import "../vars/vars-transitions-animations.css";
-@import "../src/style.css";
-
-
 .button {
   position: relative;
   margin: var(--em-size-button-margin);
