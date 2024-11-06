@@ -14,6 +14,14 @@ props:
       type: string
       title: Button URL
       format: iri-reference
+    icon:
+      type: string
+      required: false
+      description: Icon Name
+      enum:
+        - none
+        - arrow-backward
+        - arrow-forward
         
 slots:
     # Content to display in the button
@@ -23,14 +31,6 @@ slots:
         description: Content of the button.
         examples:
         - Read more
-    icon:
-        type: string
-        title: Icon
-        required: false
-        description: Icon Name
-        enum:
-          - arrow-forward
-          - arrow-backward
           
 thirdPartySettings:
   sdcStorybook:

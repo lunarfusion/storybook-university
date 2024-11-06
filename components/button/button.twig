@@ -3,13 +3,12 @@
     {% if icon %}
       <span class="button__icon">
           {# {{ icon}} #}
-          {{ source(path ~ '../components/example-content/icons/' ~ icon ~ '.svg') }}
+          {{ source(path ~ '../src/example-content/icons/' ~ icon ~ '.svg') }}
       </span>
     {% else %}
-      {# no icon #}
+      {# no icon - how to connect this with yml default "none" option? #}
     {% endif %}
   
     {{ content }}
   {% endblock %}
-
 </{{ html_tag|default('button') }}>
