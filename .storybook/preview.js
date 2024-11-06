@@ -10,4 +10,6 @@ const preview = {
   },
 };
 
+import '../src/style.css';
+
 export default preview;
