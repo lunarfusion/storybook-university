@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  margin: var(--em-size-button-margin);
+  /* margin: var(--em-size-button-margin); */
   padding-inline: var(--em-size-radius-button);
   
   max-inline-size: 100%;
@@ -10,6 +10,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--em-size-md-gap-component);
   
   background-color: var(--em-color-action-primary-default);
   border: var(--em-size-thickness-component) solid transparent;
@@ -28,20 +29,6 @@
   text-transform: none;
   text-decoration: none;
   text-transform: uppercase;
-  
-  /* contains a link OR is a link */
-  a,
-  a& {
-    /* font-family: var(--em-font-primary);
-    font-size: var(--em-size-text-med);
-    font-weight: 600;
-    line-height: 1;
-    color: var(--em-color-fg-black-static);
-    text-align: center;
-    text-transform: none;
-    text-decoration: none;
-    text-transform: uppercase; */
-  }
   
   /*** Focus Indicator ***/
   &::after {
@@ -73,7 +60,6 @@
     display: flex;
     block-size: calc(100% * 0.5);
     inline-size: auto;
-    margin-inline-end: calc(var(--em-size-radius-button) * 0.5);
   }
   
   /*** State: Hover ***/
@@ -93,7 +79,6 @@
   
   &:focus,
   &.focus,
-  
   &:focus-visible,
   &.focus-visible {
     background-color: var(--em-color-action-primary-focus);
@@ -106,14 +91,11 @@
     }
   }
   
-  
   /*** State: Active ***/
   &:active,
   &.active,
-  
   &:focus:active,
   &.focus.active,
-  
   &:focus-visible:active,
   &.focus-visible.active {
     background-color: var(--em-color-action-primary-active);
@@ -125,8 +107,31 @@
     outline: none;
   }
   
-  /*** Type Variants ***/
+  /*** Variant - secondary ***/
+  &--secondary {
+    background-color: var(--em-color-action-secondary-default);
+    
+    &:hover,
+    &.hover {
+      background-color: var(--em-color-action-secondary-hover);
+    }
+    
+    &:focus,
+    &.focus,
+    &:focus-visible,
+    &.focus-visible {
+      background-color: var(--em-color-action-secondary-focus);
+    }
+    
+    &:active,
+    &.active,
+    &:focus:active,
+    &.focus.active {
+      background-color: var(--em-color-action-secondary-active);
+    }
+  }
   
+  /*** Variant - ghost ***/
   &--ghost {
     background-color: transparent;
     border: var(--em-size-thickness-component) solid var(--em-color-action-secondary-default);
@@ -141,7 +146,6 @@
     
     &:focus,
     &.focus,
-    
     &:focus-visible,
     &.focus-visible {
       background-color: transparent;
@@ -151,7 +155,6 @@
     
     &:active,
     &.active,
-    
     &:focus:active,
     &.focus.active {
       background-color: transparent;
@@ -160,8 +163,34 @@
     }
   }
   
+  /*** Variant - circle ***/
+  &--circle {
+    border-radius: 100%;
+    block-size: var(--em-size-block-button);
+    inline-size: var(--em-size-block-button);
+    max-inline-size: var(--em-size-block-button);
+    max-block-size: var(--em-size-block-button);
+    
+    &::after {
+      border-radius: 100%;
+    }
+    
+    .button__content {
+      position: absolute;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+  }
   
-  /*** Inside menu ***/
+  /*** Variant - small ***/
+  &--small {
+    font-size: var(--em-size-text-small);
+    padding-inline: calc(var(--em-size-radius-button) * 0.5);
+    block-size: calc(var(--em-size-block-button) * 0.75);
+  }
+  
+  /*** Variant - Inside menu ***/
   &--nav {
     color: var(--em-color-action-nav-fg-default);
     background-color: transparent;
@@ -176,7 +205,6 @@
     
     &:focus,
     &.focus,
-    
     &:focus-visible,
     &.focus-visible {
       color: var(--em-color-action-nav-fg-focus);
@@ -186,7 +214,6 @@
     
     &:active,
     &.active,
-    
     &:focus:active,
     &.focus.active {
       color: var(--em-color-action-nav-fg-active);
@@ -194,51 +221,5 @@
       outline: none;
       background-color: transparent;
     }
-  }
-  
-  &--circle {
-    border-radius: 100%;
-    block-size: var(--em-size-block-button);
-    inline-size: var(--em-size-block-button);
-    max-inline-size: var(--em-size-block-button);
-    max-block-size: var(--em-size-block-button);
-    /* overflow: hidden; */
-    
-    &::after {
-      border-radius: 100%;
-    }
-  }
-  
-  &--secondary {
-    background-color: var(--em-color-action-secondary-default);
-    
-    &:hover,
-    &.hover {
-      background-color: var(--em-color-action-secondary-hover);
-    }
-    
-    &:focus,
-    &.focus,
-    
-    &:focus-visible,
-    &.focus-visible {
-      background-color: var(--em-color-action-secondary-focus);
-    }
-    
-    &:active,
-    &.active,
-    
-    &:focus:active,
-    &.focus.active {
-      background-color: var(--em-color-action-secondary-active);
-    }
-  }
-  
-  
-  /*** Size Variants ***/
-  &--small {
-    font-size: var(--em-size-text-small);
-    padding-inline: calc(var(--em-size-radius-button) * 0.5);
-    block-size: calc(var(--em-size-block-button) * 0.75);
   }
 }

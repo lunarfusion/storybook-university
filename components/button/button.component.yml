@@ -14,24 +14,31 @@ props:
       type: string
       title: Button URL
       format: iri-reference
-    icon:
+      
+    has_icon:
       type: string
-      required: false
-      description: Icon Name
+      title: Button with icon
+      description: Button icon modifier.
       enum:
-        - none
-        - arrow-backward
+        - true
+        - false
+
+slots:
+  # Content to display in the button
+  content:
+      title: Content
+      required: true
+      description: Content of the button.
+      examples:
+        - Read more
+
+  icon:
+      title: Icon
+      required: false
+      description: Optional button icon
+      examples:
         - arrow-forward
         
-slots:
-    # Content to display in the button
-    content:
-        title: Content
-        required: true
-        description: Content of the button.
-        examples:
-        - Read more
-          
 thirdPartySettings:
   sdcStorybook:
     stories:
@@ -41,27 +48,27 @@ thirdPartySettings:
           extra_classes:
             - button--primary
       secondary:
-            title: Secondary
-            props:
-              extra_classes:
-                - button--secondary
+        title: Secondary
+        props:
+          extra_classes:
+            - button--secondary
       ghost:
-            title: Ghost
-            props:
-              extra_classes:
-                - button--ghost
+        title: Ghost
+        props:
+          extra_classes:
+            - button--ghost
       nav:
-            title: Nav
-            props:
-              extra_classes:
-                - button--nav
+        title: Nav
+        props:
+          extra_classes:
+            - button--nav
       circle:
-            title: Circle
-            props:
-              extra_classes:
-                - button--circle
+        title: Circle
+        props:
+          extra_classes:
+            - button--circle
       small:
-            title: Small
-            props:
-              extra_classes:
-                - button--small                    
+        title: Small
+        props:
+          extra_classes:
+            - button--small                    

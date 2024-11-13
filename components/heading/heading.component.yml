@@ -34,8 +34,13 @@ slots:
 thirdPartySettings:
   sdcStorybook:
     stories:
-      section_heading:
-        title: Section Heading H2
+      section_title:
+        title: Section Title H2
         props:
           extra_classes:
-            - section-heading
+            - section-title
+      page_title:
+            title: Page Title H1
+            props:
+              extra_classes:
+                - page-title

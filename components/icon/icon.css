@@ -7,13 +7,13 @@ i,
   
   /*** Variants - size ***/
   &--extra-small {
-    block-size: calc(var(--em-size-block-component-base) * 0.5);
-    inline-size: calc(var(--em-size-block-component-base) * 0.5);
+    block-size: calc(var(--em-size-block-component-base) * 0.35);
+    inline-size: calc(var(--em-size-block-component-base) * 0.35);
   }
   
   &--small {
-    block-size: calc(var(--em-size-block-component-base) * 0.75);
-    inline-size: calc(var(--em-size-block-component-base) * 0.75);
+    block-size: calc(var(--em-size-block-component-base) * 0.65);
+    inline-size: calc(var(--em-size-block-component-base) * 0.65);
   }
   
   &--medium {

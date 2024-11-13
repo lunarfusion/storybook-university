@@ -11,6 +11,10 @@ slots:
     description: The card title.
     examples:
       - Title of Card
+  # How to nest the atom in the molecule?
+  tag:
+    type: component
+    component: "tag"   
   summary:
       title: Summary
       required: true
@@ -28,7 +32,7 @@ slots:
       required: false
       description: The card's image
       examples:
-        - <img src="../components/example-content/placeholder-600-400.jpg" />
+        - <img src="../src/images/placeholder-600-400.jpg" />
           
 thirdPartySettings:
   sdcStorybook:

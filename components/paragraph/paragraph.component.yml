@@ -31,3 +31,19 @@ thirdPartySettings:
             slots: 
               content:
                 - A deck appears once per article, after the page title or article title, and before a lead paragraph. It should contain any descriptive content that may help to illucidate the heading content.
+      kicker:
+            title: Kicker
+            props:
+              extra_classes:
+                - kicker
+            slots: 
+              content:
+                - A kicker is non-heading text which introduces a heading.
+      small:
+            title: Small
+            props:
+              extra_classes:
+                - text-small
+            slots: 
+              content:
+                - Reduced size text for use in cutlines, figcaptions, tags and badges, and card details.

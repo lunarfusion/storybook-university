@@ -1,0 +1,65 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Badge
+# A badge is a small piece of content which conveys static information such as status. A badge is not interactive.
+props:
+  type: object
+  properties:
+    has_icon:
+      type: string
+      title: Badge with icon
+      description: Badge icon modifier
+      enum:
+        - true
+        - false
+      default: true
+                                           
+slots:
+  # Content to display in the xxxxxx
+  content:
+    title: Content
+    required: true
+    description: Content of the badge.
+    examples:
+       - Badge
+  icon:
+     title: Icon
+     required: false
+     description: Optional badge icon
+     examples:
+       - circle-dot-solid
+         
+thirdPartySettings:
+  sdcStorybook:
+   stories: 
+     informative:
+        title: Informative
+        props:
+          extra_classes:
+          - badge--informative
+        slots:
+          content: Informative Badge
+          icon: circle-info-solid
+     positive:
+        title: Positive
+        props:
+          extra_classes:
+            - badge--positive  
+        slots:
+          content: Success Badge
+          icon: circle-check-solid
+     warning:
+       title: Warning
+       props:
+         extra_classes:
+           - badge--warning 
+       slots:
+          content: Warning Badge
+          icon: triangle-exclamation-solid                 
+     negative:
+        title: Negative
+        props:
+          extra_classes:
+            - badge--negative    
+        slots:
+            content: Error Badge
+            icon: circle-xmark-solid

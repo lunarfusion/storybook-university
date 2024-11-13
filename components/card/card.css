@@ -1,3 +1,7 @@
+/* @import "./components/image/image.css";
+@import "./components/button/button.css"; */
+/* how to import? */
+
 .card {
   position: relative;
   width: 100%;
@@ -13,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--em-size-md-gap-component);
     width: 100%;
     padding: 1rem 0.5rem;
   }
@@ -41,11 +46,21 @@
   &__image {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
     inline-size: 100%;
     block-size: auto;
-    align-self: flex-start;
     overflow: hidden;
     transition: var(--em-transition-smooth);
+    
+    img {
+      /* display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto; */
+    }
     
     
     &::after {
@@ -96,6 +111,4 @@
       max-width: 25%;
     }
   }
-  
-  
 }
