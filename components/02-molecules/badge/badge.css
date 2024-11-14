@@ -17,11 +17,9 @@
   border-end-end-radius: var(--em-size-radius-med); */
   
   font-family: var(--em-font-primary);
-  font-size: var(--em-size-text-small);
+  font-size: var(--em-size-text-med);
   line-height: 1;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 600;
   color: var(--em-color-fg-black-static);
   background-color: var(--em-color-bg-alert-informative);
   

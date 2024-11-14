@@ -1,0 +1,77 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Card
+status: experimental
+
+props:
+  type: object
+
+# WIP: use atom component within molecule, testing atoms/title 
+slots:
+  content:
+    title: Content
+    required: true
+    description: The card content.
+    examples:
+      - Why is this here if it does not represent the components a card contains?
+  
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      preview:
+        props:
+          html_tag: "div"
+        slots:
+          card_image:
+          - type: component
+            component: "storybook-university:image"
+            props:
+              extra_classes:
+                - card__image
+          card_title:
+            - type: component
+              component: "storybook-university:title"
+              props:
+                extra_classes:
+                  - title
+              slots:
+                text: Title of the Card Component
+          card_tag:
+            - type: component
+              component: "storybook-university:tag"
+              props:
+                extra_classes:
+                  - card__tag
+              slots:
+                tag_content: 'blahblah'
+                tag_icon: shield-u
+          card_summary:
+            - type: component
+              component: "storybook-university:paragraph"
+              props:
+                extra_classes:
+                  - card__summary
+              slots:
+                content: Summary of the content which this card is linking the visitor to.
+          card_link:
+             - type: component
+               component: "storybook-university:button"
+               props:
+                 extra_classes:
+                   - card__link
+                   - button--ghost
+                   - button--right
+               slots:
+                  content: Card Link
+                  
+# How to do variants?
+      vertical:
+        title: Vertical/default
+        props:
+          extra_classes:
+            - card--vertical
+      horizontal:
+            title: Horizontal
+            props:
+              extra_classes:
+                - card--horizontal
+

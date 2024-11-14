@@ -11,8 +11,8 @@
   align-items: center;
   gap: var(--em-size-sm-gap-component);
   
-  padding-block: var(--em-size-xs-inner-vert-component);
-  padding-inline: var(--em-size-xs-inner-horiz-component);
+  /* padding-block: var(--em-size-xs-inner-vert-component);
+  padding-inline: var(--em-size-xs-inner-horiz-component); */
   margin-inline-end: 1rem;
   
   border-radius: var(--em-size-radius-sm);

@@ -1,0 +1,12 @@
+<div{{attributes.addClass('card').addClass(extra_classes|default([])) }}>
+  <div class="card__content">
+    {% block card_title %}{{ card_title }}{% endblock %}
+    {% block card_tag %}{{ card_tag }}{% endblock %}
+    {% block card_summary %}{{ card_summary }}{% endblock %}
+    {% block card_link %}{{ card_link }}{% endblock %}
+  </div>
+
+  <div class="card__image">
+    {% block card_image %}{{ card_image }}{% endblock %}
+  </div> 
+</div>

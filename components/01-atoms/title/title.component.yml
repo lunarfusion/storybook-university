@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: title
+
+props:
+  type: object
+  properties:
+    html_tag:
+      type: string
+      description: xxxxxx is either a xxxxxx or a link that looks like a xxxxxx.
+      enum:
+        - h3
+        - h4
+slots:
+  text:
+    type: string
+    title: Title text
+    examples:
+      - Title of a Component's Content

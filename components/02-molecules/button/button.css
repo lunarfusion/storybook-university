@@ -222,4 +222,8 @@
       background-color: transparent;
     }
   }
+  
+  &--right {
+    margin-inline-start: auto;
+  }
 }

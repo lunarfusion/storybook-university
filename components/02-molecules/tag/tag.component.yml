@@ -1,20 +1,22 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Tag
+status: experimental
 # A tag is a keyword that may be used to group, filter, or sort content.
 
 props:
   type: object
-                                           
+   
 slots:
-  # Content to display in the xxxxxx
   tag_content:
+    type: string
     title: Content
     required: true
     description: Content of the tag.
     examples:
-       - Tag
+       - Tag Content
   tag_icon:
-     title: Icon
+     type: component
+     component: "icon"
      required: true
      description: tag icon
      examples:

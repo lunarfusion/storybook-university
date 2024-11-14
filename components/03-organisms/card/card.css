@@ -1,7 +1,3 @@
-/* @import "./components/image/image.css";
-@import "./components/button/button.css"; */
-/* how to import? */
-
 .card {
   position: relative;
   width: 100%;
@@ -12,14 +8,18 @@
   flex-direction: column-reverse;
   align-items: flex-start;
   margin-block: 2rem;
+  border-block-start: 4px solid var(--em-color-border-secondary-light);
+  box-shadow: var(--em-shadow-002);
+  border-end-end-radius: var(--em-size-radius-med);
+  border-end-start-radius: var(--em-size-radius-med);
   
   &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--em-size-md-gap-component);
+    gap: var(--em-size-sm-gap-component);
     width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 1rem;
   }
   
   &__title {
@@ -39,9 +39,7 @@
     }
   }
   
-  &__summary {
-    margin: 0.5rem;
-  }
+  &__summary {}
   
   &__image {
     position: relative;
@@ -53,15 +51,6 @@
     block-size: auto;
     overflow: hidden;
     transition: var(--em-transition-smooth);
-    
-    img {
-      /* display: block;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto; */
-    }
-    
     
     &::after {
       width: 100%;

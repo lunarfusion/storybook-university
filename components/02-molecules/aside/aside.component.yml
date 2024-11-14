@@ -1,5 +1,6 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Aside
+status: experimental
 
 props:
   type: object
@@ -12,7 +13,6 @@ slots:
     examples:
     - Title of the Aside
     
-  # Content to display in the xxxxxx
   aside_content:
     title: Content
     required: true

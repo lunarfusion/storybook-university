@@ -1,5 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Badge
+status: experimental
+
 # A badge is a small piece of content which conveys static information such as status. A badge is not interactive.
 props:
   type: object
@@ -14,7 +16,6 @@ props:
       default: true
                                            
 slots:
-  # Content to display in the xxxxxx
   content:
     title: Content
     required: true
