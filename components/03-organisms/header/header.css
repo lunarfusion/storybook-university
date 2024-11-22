@@ -1,0 +1,131 @@
+.brandhead {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: var(--em-size-baseline);
+  padding-block: var(--em-size-baseline);
+  background-color: var(--em-color-bg-primary);
+  
+  &.region {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  /********* Mobile nav - open/close Toggle *********/
+  .button--menu-toggle {
+    position: absolute;
+    right: 0.5rem;
+    
+    display: none;
+    inline-size: var(--em-size-mobile-menu-toggle);
+    block-size: var(--em-size-mobile-menu-toggle);
+    padding-block: 0;
+    background-color: transparent;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    border-radius: 0;
+    border-width: 0;
+    border-inline-start-width: 2px;
+    
+    @media (min-width: 993px) {
+      & {
+        visibility: hidden;
+      }
+    }
+  }
+  
+  .button--menu-toggle.is-closed {
+    
+    .is-open-text,
+    .menu-close-icon {
+      opacity: 0;
+      display: none;
+    }
+    
+    .is-closed-text,
+    .menu-open-icon {
+      opacity: 1;
+      display: flex;
+    }
+  }
+  
+  .button--menu-toggle.is-open {
+    
+    .is-open-text,
+    .menu-close-icon {
+      opacity: 1;
+      display: flex;
+    }
+    
+    .is-closed-text,
+    .menu-open-icon {
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  
+  
+  /*** Mobile Responsive Menu Drawer ***/
+  @media (max-width: 992px) {
+    .button--menu-toggle {
+      visibility: visible;
+      z-index: 3;
+    }
+    
+    .region--main-menu {
+      position: absolute;
+      width: 100%;
+      
+      
+      .main-menu-content-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        transition: var(--em-transition-smooth);
+        
+        &.menu-opened {
+          transform: translateX(0);
+        }
+        
+        &.menu-closed {
+          transform: translateX(105%);
+        }
+      }
+      
+      .menu--main {
+        block-size: auto;
+        inline-size: 100%;
+        min-inline-size: 100%;
+        
+        span,
+        a {
+          white-space: wrap;
+        }
+      }
+      
+      .menu--main .menu {
+        flex-direction: column;
+      }
+      
+      .menu--main .menu .menu-wrapper {
+        position: relative;
+        min-height: auto;
+        z-index: 1;
+        inline-size: 100%;
+      }
+      
+      .menu--main .menu-item--expanded .menu {
+        margin-block-start: 0;
+      }
+    }
+  }
+}

@@ -27,19 +27,19 @@ props:
 slots:
   # Content to display in the button
   content:
-      title: Content
-      required: true
-      description: Content of the button.
-      examples:
-        - Read more
+    title: Content
+    required: true
+    description: Content of the button.
+    examples:
+      - Read more
 
   icon:
-      title: Icon
-      required: false
-      description: Optional button icon
-      examples:
-        - arrow-forward
-        
+    title: Icon
+    required: false
+    description: Optional button icon
+    examples:
+      - arrow-forward
+      
 thirdPartySettings:
   sdcStorybook:
     stories:

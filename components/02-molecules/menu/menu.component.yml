@@ -1,0 +1,58 @@
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Menu
+status: experimental
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  type: object
+  
+  properties:
+    items:
+      type: array
+      title: Menu Items
+      props:
+        item_classes:
+          - menu-item
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            examples:
+              - Home
+              - About
+              - Projects
+              - Contact
+          url:
+            type: iri-reference
+            examples:
+              - https://wikipedia.org
+              - https://nasa.gov
+              - https://lunarfusion.com
+              - https://www.futurity.org
+
+slots:
+  # The key is the name of the slot. In your template you will use
+  # {% block content %}.
+  title:
+    title: Title
+          
+js:
+  menu.js: { attributes: { defer: true } }
+
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      vertical:
+        title: Vertical
+        props:
+          extra_classes:
+            - menu--vertical
+      horizontal:
+          title: Horizontal
+          props:
+            extra_classes:
+              - menu--horizontal

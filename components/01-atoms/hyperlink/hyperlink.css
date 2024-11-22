@@ -1,0 +1,124 @@
+a {
+  position: relative;
+  color: var(--em-color-link-default);
+  font-weight: 500;
+  transition: var(--em-transition-basic);
+  border-radius: var(--em-size-radius-sm);
+  
+  border: var(--em-size-thickness-focus-indicator) solid transparent;
+  
+  &:hover {
+    color: var(--em-color-link-hover);
+  }
+  
+  &:focus,
+  &:focus-visible {
+    color: var(--em-color-link-focus);
+    outline: 0;
+    border-color: var(--em-color-focus-indicator);
+  }
+  
+  &:active {
+    color: var(--em-color-link-active);
+    border-color: transparent;
+    outline: none;
+  }
+  
+  &:focus:active,
+  &:focus-visible:active {
+    border-color: transparent;
+    outline: none;
+  }
+  
+  /*** prevent focus from firing on click ***/
+  &:-webkit-focus-ring {
+    border-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  &:visited {
+    color: var(--em-color-link-visited);
+  }
+  
+  /*** Paragraph content links ***/
+  p &:not(.button),
+  ol:not(.tabs) li:not(.menu-item) &,
+  ul:not(.tabs) li:not(.menu-item) & {
+    position: relative;
+    text-decoration: none;
+    
+    background: linear-gradient(to right,
+        var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
+        var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 300% 2px;
+    background-position: 98% 100%;
+    box-decoration-break: slice;
+    -webkit-box-decoration-break: slice;
+    
+    &:hover {
+      background-position: 2% 100%;
+    }
+  }
+}
+
+
+p:has(.cta-link) {
+  display: flex;
+}
+
+/*** CTA links ***/
+.cta-link {
+  display: inline-flex;
+  position: relative;
+  padding-inline-end: 1.5rem;
+  margin-inline-start: auto;
+  
+  font-family: var(--em-font-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;
+  
+  a {
+    font-family: var(--em-font-secondary);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    background: linear-gradient(to right,
+        var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
+        var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 300% 3px;
+    background-position: 98% 100%;
+    box-decoration-break: slice;
+    -webkit-box-decoration-break: slice;
+    
+    &:hover {
+      background-position: 1% 100%;
+    }
+  }
+  
+  
+  &::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    margin-inline-start: 0.5rem;
+    background-color: var(--em-color-fg-secondary);
+    mask-image: url('../images/arrow-right.svg');
+    transition: var(--em-transition-boing);
+    transform: translateX(-0.25rem);
+  }
+  
+  &:hover::after {
+    transform: translateX(0);
+  }
+}

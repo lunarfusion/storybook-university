@@ -1,0 +1,21 @@
+{%
+  set classes = [
+    'brandhead',
+    'drk-background',
+    'region',
+    'region--' ~ region|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% block branding %}{{ branding }}{% endblock %}
+  <button aria-label="Toggle menu" class="button button--ghost button--menu-toggle is-closed" id="menu-toggle" title="Toggle menu" type="button" value="open menu">
+    <img class="menu-open-icon" src="../src/icons/menu-open.svg">
+    <span class="is-closed-text">Menu</span>
+  
+    <img class="menu-close-icon" src="../src/icons/menu-close.svg">
+    <span class="is-open-text">Close</span>
+  </button>
+
+  </div>
+</div>
