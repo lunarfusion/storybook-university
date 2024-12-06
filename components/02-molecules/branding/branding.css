@@ -5,6 +5,8 @@
   margin-left: auto;
   margin-right: auto;
   background-color: var(--em-color-bg-primary);
+  padding-inline: var(--em-size-baseline);
+  padding-block: var(--em-size-baseline);
   
   &__row {
     width: 100%;
@@ -15,8 +17,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: flex-start;
+    /* gap: 2rem; */
   }
   
   .block-system-branding-block {
@@ -33,10 +35,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    flex: 0 0 10%;
     
-    width: 100px;
-    min-width: 100px;
-    padding-block: 0.5rem;
+    /* width: 100px;
+    min-width: 100px; */
     
     .site-logo {
       position: relative;
@@ -56,6 +58,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+    padding-inline-start: 1rem;
   }
   
   &__site-slogan {
@@ -114,15 +117,16 @@
       }
       
       .branding__logo {
-        flex: 0 0 25%;
-        max-width: 4.5rem;
-        min-width: 4.5rem;
+        flex: 0 0 15%;
+        max-width: 15%;
+        /* max-width: 4.5rem;
+        min-width: 4.5rem; */
       }
       
       .branding__site-name-slogan {
         display: flex;
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 75%;
+        max-width: 75%;
         justify-content: center;
       }
       
@@ -147,14 +151,16 @@
       
       .branding__row {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         flex-wrap: nowrap;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         gap: 0;
         margin-left: 0;
-        max-width: calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component));
-        flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component));
+        /* max-width: calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component));
+        flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component)); */
+        
+        flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle));
       }
       
       .branding__site-name-slogan {
@@ -166,8 +172,8 @@
   
   @media (max-width: 576px) {
     .branding__logo {
-      max-width: 3.5rem;
-      min-width: 3.5rem;
+      /* max-width: 3.5rem;
+      min-width: 3.5rem; */
     }
     
     &__site-name {
@@ -176,6 +182,13 @@
       a {
         font-size: 1.4rem;
       }
+    }
+    
+    &__site-slogan {
+      font-size: 1rem;
+      visibility: hidden;
+      height: 0;
+      width: 0;
     }
   }
 }

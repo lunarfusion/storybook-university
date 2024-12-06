@@ -23,6 +23,9 @@ libraryOverrides:
     - core/drupal
     - core/once
 
+js:
+  header.js: { attributes: { defer: true } } # does this go here or in menu.js?
+    
 thirdPartySettings:
   sdcStorybook:
     stories:
@@ -37,3 +40,40 @@ thirdPartySettings:
                 site_name: 'Storybook University'
                 site_slogan: 'A Higher Education Design System Demo'
                 site_logo: "../src/images/colorwheel.svg"
+          button:
+            - type: component
+              component: "storybook-university:button"
+              slots:
+                content: open
+              props:
+                input_id:
+                - menu-toggle
+                has_icon: true
+                icon: menu-open
+                extra_classes:
+                  - button--menu-toggle
+                  - button--ghost
+                  - button--icon
+          menu:
+            - type: component
+              component: "storybook-university:menu"
+              slots:
+                items:
+                  items:
+                    title:
+                      - Home
+                      - About
+                      - Programs
+                      - Events
+                    url:
+                      - https://wikipedia.org
+                      - https://nasa.gov
+                      - https://lunarfusion.com
+                      - https://www.futurity.org
+              props:
+                menu_id:
+                 - main-menu-hider
+                extra_classes:
+                  - menu--horizontal
+                  - menu--main
+                  - menu-closed

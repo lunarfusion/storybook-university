@@ -183,6 +183,79 @@
     }
   }
   
+  /*** Variant - menu toggle ***/
+  &--menu-toggle {
+    border-color: transparent;
+    position: absolute;
+    align-self: flex-end;
+    top: 0;
+    right: 0;
+    display: none;
+    inline-size: var(--em-size-mobile-menu-toggle);
+    block-size: var(--em-size-mobile-menu-toggle);
+    padding-block: 0;
+    background-color: var(--em-color-bg-primary);
+    display: inline-flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 0.25rem;
+    border-radius: 0;
+    border-width: 0;
+    border-inline-start-width: 2px;
+    color: var(--em-color-fg-white-static);
+    z-index: 2;
+    
+    .button__icon {
+      inline-size: 100%;
+      block-size: auto;
+    }
+    
+    /* change icon to white */
+    svg {
+      filter: invert(1);
+    }
+    
+    .button__content {
+      font-size: var(--em-size-text-small);
+    }
+    
+    /* we don't need it on desktop sizes */
+    @media (min-width: 993px) {
+      & {
+        visibility: hidden;
+      }
+    }
+    
+    /* X icon */
+    &.is-open {
+      display: none;
+    }
+    
+    /* hamburger icon */
+    &.is-closed {
+      
+      .is-open-text,
+      .menu-close-icon {
+        opacity: 0;
+        display: none;
+      }
+      
+      .is-closed-text,
+      .menu-open-icon {
+        opacity: 1;
+        display: flex;
+      }
+    }
+    
+    /* states are simplified */
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--em-color-bg-primary);
+      color: var(--em-color-fg-white-static);
+    }
+  }
+  
   /*** Variant - small ***/
   &--small {
     font-size: var(--em-size-text-small);

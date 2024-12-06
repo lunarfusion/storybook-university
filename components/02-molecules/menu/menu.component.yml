@@ -12,9 +12,6 @@ props:
     items:
       type: array
       title: Menu Items
-      props:
-        item_classes:
-          - menu-item
       items:
         type: object
         properties:
@@ -23,25 +20,29 @@ props:
             examples:
               - Home
               - About
-              - Projects
-              - Contact
+              - Programs
+              - Events
           url:
-            type: iri-reference
+            type: string
+            format: uri
             examples:
               - https://wikipedia.org
               - https://nasa.gov
               - https://lunarfusion.com
               - https://www.futurity.org
+        required:
+          - title
+          - url
 
 slots:
   # The key is the name of the slot. In your template you will use
   # {% block content %}.
   title:
     title: Title
-          
+         
+                  
 js:
-  menu.js: { attributes: { defer: true } }
-
+  menu.js: { attributes: { defer: true } } # does this go here or in header.js?
 
 thirdPartySettings:
   sdcStorybook:
@@ -52,7 +53,30 @@ thirdPartySettings:
           extra_classes:
             - menu--vertical
       horizontal:
-          title: Horizontal
-          props:
-            extra_classes:
-              - menu--horizontal
+        title: Horizontal
+        props:
+          extra_classes:
+            - menu--horizontal
+      main_menu:
+        title: Main navigation menu
+        slots:
+          button:
+            - type: component
+              component: "storybook-university:button"
+              slots:
+                content: open
+              props:
+                input_id:
+                  - menu-toggle
+                has_icon: true
+                icon: menu-open
+                extra_classes:
+                  - button--menu-toggle
+                  - button--ghost
+                  - button--icon
+        props:
+          menu_id:
+            - main-menu-hider
+          extra_classes:
+            - menu--main
+            - menu--horizontal

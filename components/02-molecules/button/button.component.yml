@@ -39,7 +39,7 @@ slots:
     description: Optional button icon
     examples:
       - arrow-forward
-      
+
 thirdPartySettings:
   sdcStorybook:
     stories:
@@ -73,3 +73,29 @@ thirdPartySettings:
         props:
           extra_classes:
             - button--small                    
+      menu_toggle_open:
+        title: Menu Toggle Open
+        props:
+          extra_classes:
+            - button--menu-toggle
+            - button--ghost
+            - button--icon
+          input_id:
+            - menu-toggle
+        slots:
+          content: open
+          icon: menu-open
+      menu_toggle_close:
+        title: Menu Toggle Close
+        props:
+          extra_classes:
+            - button--menu-toggle
+            - button--ghost
+            - button--icon
+          input_id:
+            - menu-toggle
+        slots:
+          content: close
+          icon: menu-close
+          required:
+            - icon

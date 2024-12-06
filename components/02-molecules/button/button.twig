@@ -1,4 +1,4 @@
-<{{ html_tag|default('button')}}{{attributes.setAttribute('href',url).addClass('button').addClass(state).addClass(extra_classes|default([])) }}>
+<{{ html_tag|default('button')}}{{attributes.setAttribute('href',url).setAttribute('id',input_id).addClass('button').addClass(state).addClass(extra_classes|default([]))}}>
   {% block button_content %}
       {# if is circle, content is sr-only #}
       <span class="button__content">
