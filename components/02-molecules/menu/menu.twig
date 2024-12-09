@@ -5,28 +5,30 @@
   {% if items %}
   
   <div class="menu-wrapper">
-    {% block button %}{{ button }}{% endblock %}
-    
-    <ul{{ attributes.addClass('menu').addClass(extra_classes).setAttribute('id',menu_id) }}>
+    {% block button %}{{ menu_toggle }}{% endblock %}
 
-      {% for item in items %}
-        {# {%
-          set item_classes = [
-            'menu-item',
-            item.is_expanded ? 'menu-item--expanded',
-            item.is_collapsed ? 'menu-item--collapsed',
-            item.in_active_trail ? 'menu-item--active-trail',
-          ]
-        %} 
-        <li{{ item.attributes.addClass(item_classes) }}> #}
-        <li{{ item.attributes }}{{ create_attribute({'class': ['menu-item']}) }}>
-          {{ link(item.title, item.url, { class: ['menu__link']}) }}
-          {% if item.below %}
-            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-          {% endif %}
-        </li>
-      {% endfor %}
-      </ul>
+    <div id="main-menu-hider">
+      <ul{{ attributes.addClass('menu').addClass(extra_classes).setAttribute('id',menu_id) }}>
+  
+        {% for item in items %}
+          {# {%
+            set item_classes = [
+              'menu-item',
+              item.is_expanded ? 'menu-item--expanded',
+              item.is_collapsed ? 'menu-item--collapsed',
+              item.in_active_trail ? 'menu-item--active-trail',
+            ]
+          %} 
+          <li{{ item.attributes.addClass(item_classes) }}> #}
+          <li{{ item.attributes }}{{ create_attribute({'class': ['menu-item']}) }}>
+            {{ link(item.title, item.url, { class: ['menu__link']}) }}
+            {% if item.below %}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
     {% endif %}
   {% endmacro %}
 

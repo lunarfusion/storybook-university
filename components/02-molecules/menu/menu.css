@@ -226,9 +226,7 @@
   min-width: 100%;
   transition: var(--em-transition-smooth);
   background-color: transparent;
-  
   margin-block-start: -100%;
-  
   
   .menu-item {
     width: 100%;
@@ -322,7 +320,7 @@
   } */
   
   .menu-wrapper {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     
     .menu--main {
@@ -343,7 +341,6 @@
         transform: translateX(105%);
       }
     }
-    
     
     .main-menu-content-wrapper {
       flex-direction: column;

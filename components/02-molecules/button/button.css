@@ -205,6 +205,10 @@
     color: var(--em-color-fg-white-static);
     z-index: 2;
     
+    &::after {
+      border-radius: 0;
+    }
+    
     .button__icon {
       inline-size: 100%;
       block-size: auto;
@@ -226,24 +230,37 @@
       }
     }
     
-    /* X icon */
-    &.is-open {
+    /* menu is closed */
+    .close-text {
       display: none;
     }
     
-    /* hamburger icon */
+    .open-text {
+      display: block;
+    }
+    
     &.is-closed {
+      .button__icon {
+        content: url("../src/icons/menu-open.svg");
+        filter: invert(1);
+      }
+    }
+    
+    
+    /* menu is opened */
+    &.is-open {
       
-      .is-open-text,
-      .menu-close-icon {
-        opacity: 0;
-        display: none;
+      .button__icon {
+        content: url("../src/icons/menu-close.svg");
+        filter: invert(1);
       }
       
-      .is-closed-text,
-      .menu-open-icon {
-        opacity: 1;
-        display: flex;
+      .close-text {
+        display: block
+      }
+      
+      .open-text {
+        display: none;
       }
     }
     

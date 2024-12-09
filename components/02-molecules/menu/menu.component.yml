@@ -42,7 +42,7 @@ slots:
          
                   
 js:
-  menu.js: { attributes: { defer: true } } # does this go here or in header.js?
+  menu.js: { attributes: { defer: true } }
 
 thirdPartySettings:
   sdcStorybook:
@@ -60,20 +60,24 @@ thirdPartySettings:
       main_menu:
         title: Main navigation menu
         slots:
-          button:
+          menu_toggle:
             - type: component
-              component: "storybook-university:button"
-              slots:
-                content: open
+              component: "storybook-university:button" 
               props:
-                input_id:
-                  - menu-toggle
+                input_id: menu-toggle
+                html_tag: button
+                url: false
                 has_icon: true
-                icon: menu-open
+                menu_toggler: true
                 extra_classes:
                   - button--menu-toggle
                   - button--ghost
                   - button--icon
+              slots:
+                required:
+                  - icon
+                icon: menu-open
+                content: open                         
         props:
           menu_id:
             - main-menu-hider

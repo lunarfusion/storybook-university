@@ -23,8 +23,9 @@ libraryOverrides:
     - core/drupal
     - core/once
 
-js:
-  header.js: { attributes: { defer: true } } # does this go here or in menu.js?
+# js:
+  # does this go here or in menu.js?
+  # header.js: { attributes: { defer: true } } 
     
 thirdPartySettings:
   sdcStorybook:
