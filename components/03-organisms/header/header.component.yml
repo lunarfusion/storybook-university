@@ -22,10 +22,6 @@ libraryOverrides:
   dependencies:
     - core/drupal
     - core/once
-
-# js:
-  # does this go here or in menu.js?
-  # header.js: { attributes: { defer: true } } 
     
 thirdPartySettings:
   sdcStorybook:
@@ -55,7 +51,7 @@ thirdPartySettings:
                   - button--menu-toggle
                   - button--ghost
                   - button--icon
-          menu:
+          menu_main:
             - type: component
               component: "storybook-university:menu"
               slots:
@@ -71,10 +67,13 @@ thirdPartySettings:
                       - https://nasa.gov
                       - https://lunarfusion.com
                       - https://www.futurity.org
-              props:
-                menu_id:
-                 - main-menu-hider
-                extra_classes:
-                  - menu--horizontal
-                  - menu--main
-                  - menu-closed
+
+              # menu_toggle:
+              #   - type: component
+              #     component: "storybook-university:button" 
+              # props:
+              #   menu_id:
+              #    - main-menu
+              #   extra_classes:
+              #     - menu--horizontal
+              #     - menu--main

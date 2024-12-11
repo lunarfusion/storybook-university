@@ -80,7 +80,7 @@ thirdPartySettings:
                 content: open                         
         props:
           menu_id:
-            - main-menu-hider
+            - main-menu
           extra_classes:
             - menu--main
             - menu--horizontal

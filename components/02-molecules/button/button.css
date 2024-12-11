@@ -223,13 +223,6 @@
       font-size: var(--em-size-text-small);
     }
     
-    /* we don't need it on desktop sizes */
-    @media (min-width: 993px) {
-      & {
-        visibility: hidden;
-      }
-    }
-    
     /* menu is closed */
     .close-text {
       display: none;

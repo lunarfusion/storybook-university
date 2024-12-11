@@ -4,7 +4,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--em-color-bg-primary);
+  /* background-color: var(--em-color-bg-primary); */
   
   &.region {
     display: flex;

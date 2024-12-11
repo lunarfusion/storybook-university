@@ -14,6 +14,7 @@
   flex-direction: row;
 }
 
+
 /** menu wrapper level 2 for submenu show/hide **/
 .menu .menu-wrapper {
   position: relative;
@@ -313,11 +314,32 @@
 }
 
 /*** Mobile Responsive Menu Drawer ***/
+
+/* we don't need the menu toggle on desktop sizes */
+@media (min-width: 993px) {
+  & {
+    visibility: hidden;
+  }
+  
+  .menu-wrapper .menu--main {
+    
+    &.menu-opened,
+    &.menu-closed {
+      transform: translateX(0);
+    }
+  }
+}
+
+
 @media (max-width: 992px) {
-  /* .button--menu-toggle {
+  .button--menu-toggle {
     visibility: visible;
     z-index: 3;
-  } */
+  }
+  
+  .menu-closed .menu--main {
+    transform: translateX(100%);
+  }
   
   .menu-wrapper {
     /* position: absolute; */
@@ -332,21 +354,13 @@
       z-index: 999;
       transition: var(--em-transition-smooth);
       margin-block-start: var(--em-size-mobile-menu-toggle);
-      
-      &.menu-opened {
-        transform: translateX(0);
-      }
-      
-      &.menu-closed {
-        transform: translateX(105%);
-      }
     }
     
     .main-menu-content-wrapper {
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      position: absolute;
+      /* position: absolute; */
       width: 100%;
       z-index: 999;
       transition: var(--em-transition-smooth);
