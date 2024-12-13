@@ -32,25 +32,56 @@
     }
   }
   
-  
-  
   /*** Mobile Responsive Menu Drawer ***/
-  /* @media (max-width: 992px) {
+  /* we don't need the menu toggle on desktop sizes */
+  @media (min-width: 993px) {
+    & {
+      visibility: hidden;
+    }
+    
+    .menu-wrapper {
+      overflow: hidden;
+    }
+    
+    .menu-wrapper .menu--main {
+      
+      &.menu-opened,
+      &.menu-closed {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  @media (max-width: 992px) {
     .button--menu-toggle {
       visibility: visible;
       z-index: 3;
     }
     
-    .region--main-menu {
-      position: absolute;
+    .menu-closed .menu--main {
+      transform: translateX(100%);
+    }
+    
+    .menu-wrapper {
+      /* position: absolute; */
       width: 100%;
       
+      .menu--main {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        transition: var(--em-transition-smooth);
+        margin-block-start: var(--em-size-mobile-menu-toggle);
+      }
       
       .main-menu-content-wrapper {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        position: absolute;
+        /* position: absolute; */
         width: 100%;
         z-index: 999;
         transition: var(--em-transition-smooth);
@@ -90,5 +121,5 @@
         margin-block-start: 0;
       }
     }
-  } */
+  }
 }

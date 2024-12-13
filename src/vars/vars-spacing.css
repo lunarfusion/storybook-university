@@ -73,7 +73,8 @@
   --em-size-menu-item: 50px;
   --em-size-menu-dropdown-icon: 1.25rem;
   --em-size-mobile-menu-toggle: 4.5rem;
-  
+  --em-size-inner-menu-item-vertical: 0.75rem;
+  --em-size-inner-menu-item-horizontal: 1rem;
   
   @media (max-width: 992px) {
     --em-size-col-padding: 16px;

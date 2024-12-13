@@ -15,7 +15,6 @@ props:
       type: string
       title: Button URL
       format: iri-reference
-      required: false
       default: http://lunarfusion.com
     
     input_id:
@@ -89,8 +88,7 @@ thirdPartySettings:
         title: Small
         props:
           extra_classes:
-            - button--small   
-            
+            - button--small               
       menu_toggle:
         title: Menu Toggle
         input_id: menu-toggle
@@ -103,45 +101,8 @@ thirdPartySettings:
             - button--menu-toggle
             - button--ghost
             - button--icon
-            # - is-closed
         slots:
           required:
              - icon
           icon: menu-open
           content: open
-                               
-      # menu_toggle_open:
-      #   title: Menu Toggle Open
-      #   props:
-      #     url: false
-      #     has_icon: true
-      #     extra_classes:
-      #       - button--menu-toggle
-      #       - button--ghost
-      #       - button--icon
-      #       - is-closed
-      #     input_id:
-      #       - menu-toggle
-      #   slots:
-      #     required:
-      #      - icon
-      #     icon: menu-open
-      #     content: open
-          
-      # menu_toggle_close:
-      #   title: Menu Toggle Close
-      #   props:
-      #     url: false
-      #     has_icon: true
-      #     extra_classes:
-      #       - button--menu-toggle
-      #       - button--ghost
-      #       - button--icon
-      #       - is-open
-      #     input_id:
-      #       - menu-toggle
-      #   slots:
-      #     required:
-      #       - icon
-      #     icon: menu-close
-      #     content: close

@@ -20,3 +20,9 @@ slots:
     type: string
     examples:
       - 'A Higher Education Design System Demo'
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      preview:
+        title: Branding

@@ -39,10 +39,6 @@ slots:
   # {% block content %}.
   title:
     title: Title
-         
-                  
-js:
-  menu.js: { attributes: { defer: true } }
 
 thirdPartySettings:
   sdcStorybook:
@@ -56,31 +52,4 @@ thirdPartySettings:
         title: Horizontal
         props:
           extra_classes:
-            - menu--horizontal
-      main_menu:
-        title: Main navigation menu
-        slots:
-          menu_toggle:
-            - type: component
-              component: "storybook-university:button" 
-              props:
-                input_id: menu-toggle
-                html_tag: button
-                url: false
-                has_icon: true
-                menu_toggler: true
-                extra_classes:
-                  - button--menu-toggle
-                  - button--ghost
-                  - button--icon
-              slots:
-                required:
-                  - icon
-                icon: menu-open
-                content: open                         
-        props:
-          menu_id:
-            - main-menu
-          extra_classes:
-            - menu--main
             - menu--horizontal

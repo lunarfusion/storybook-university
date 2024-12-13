@@ -22,6 +22,9 @@ libraryOverrides:
   dependencies:
     - core/drupal
     - core/once
+ 
+js:
+ header.js: { attributes: { defer: true } }
     
 thirdPartySettings:
   sdcStorybook:
@@ -37,23 +40,33 @@ thirdPartySettings:
                 site_name: 'Storybook University'
                 site_slogan: 'A Higher Education Design System Demo'
                 site_logo: "../src/images/colorwheel.svg"
-          button:
+          menu_toggle:
             - type: component
-              component: "storybook-university:button"
-              slots:
-                content: open
+              component: "storybook-university:button" 
               props:
-                input_id:
-                - menu-toggle
+                input_id: menu-toggle
+                html_tag: button
+                url: false
                 has_icon: true
-                icon: menu-open
+                menu_toggler: true
                 extra_classes:
                   - button--menu-toggle
                   - button--ghost
                   - button--icon
+              slots:
+                required:
+                  - icon
+                icon: menu-open
+                content: open   
           menu_main:
             - type: component
               component: "storybook-university:menu"
+              props:
+                menu_id:
+                  - main-menu
+                extra_classes:
+                  - menu--main
+                  - menu--horizontal
               slots:
                 items:
                   items:
@@ -67,13 +80,4 @@ thirdPartySettings:
                       - https://nasa.gov
                       - https://lunarfusion.com
                       - https://www.futurity.org
-
-              # menu_toggle:
-              #   - type: component
-              #     component: "storybook-university:button" 
-              # props:
-              #   menu_id:
-              #    - main-menu
-              #   extra_classes:
-              #     - menu--horizontal
-              #     - menu--main
+ 

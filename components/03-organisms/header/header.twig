@@ -9,6 +9,8 @@
 
 <div{{ attributes.addClass(classes) }}>
   {% block branding %}{{ branding }}{% endblock %}
-  {# {% block button %}{{ button }}{% endblock %} #}
-  {% block menu %}{{ menu_main }}{% endblock %}
+
+    {% block button %}{{ menu_toggle }}{% endblock %}
+    {% block menu %}{{ menu_main }}{% endblock %}
+
 </div>

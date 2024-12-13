@@ -183,7 +183,52 @@
     }
   }
   
-  /*** Variant - menu toggle ***/
+  /*** Variant - small ***/
+  &--small {
+    font-size: var(--em-size-text-small);
+    padding-inline: calc(var(--em-size-radius-button) * 0.5);
+    block-size: calc(var(--em-size-block-button) * 0.75);
+  }
+  
+  /*** Variant - if Button is inside a menu ***/
+  &--nav {
+    color: var(--em-color-action-nav-fg-default);
+    background-color: transparent;
+    
+    &:hover,
+    &.hover {
+      color: var(--em-color-action-nav-fg-hover);
+      border-color: transparent;
+      outline: none;
+      background-color: transparent;
+    }
+    
+    &:focus,
+    &.focus,
+    &:focus-visible,
+    &.focus-visible {
+      color: var(--em-color-action-nav-fg-focus);
+      outline: none;
+      background-color: transparent;
+    }
+    
+    &:active,
+    &.active,
+    &:focus:active,
+    &.focus.active {
+      color: var(--em-color-action-nav-fg-active);
+      border-color: transparent;
+      outline: none;
+      background-color: transparent;
+    }
+  }
+  
+  &--right {
+    margin-inline-start: auto;
+  }
+  
+  
+  /*** Variant - main menu toggle ***/
   &--menu-toggle {
     border-color: transparent;
     position: absolute;
@@ -239,7 +284,6 @@
       }
     }
     
-    
     /* menu is opened */
     &.is-open {
       
@@ -264,49 +308,5 @@
       background-color: var(--em-color-bg-primary);
       color: var(--em-color-fg-white-static);
     }
-  }
-  
-  /*** Variant - small ***/
-  &--small {
-    font-size: var(--em-size-text-small);
-    padding-inline: calc(var(--em-size-radius-button) * 0.5);
-    block-size: calc(var(--em-size-block-button) * 0.75);
-  }
-  
-  /*** Variant - Inside menu ***/
-  &--nav {
-    color: var(--em-color-action-nav-fg-default);
-    background-color: transparent;
-    
-    &:hover,
-    &.hover {
-      color: var(--em-color-action-nav-fg-hover);
-      border-color: transparent;
-      outline: none;
-      background-color: transparent;
-    }
-    
-    &:focus,
-    &.focus,
-    &:focus-visible,
-    &.focus-visible {
-      color: var(--em-color-action-nav-fg-focus);
-      outline: none;
-      background-color: transparent;
-    }
-    
-    &:active,
-    &.active,
-    &:focus:active,
-    &.focus.active {
-      color: var(--em-color-action-nav-fg-active);
-      border-color: transparent;
-      outline: none;
-      background-color: transparent;
-    }
-  }
-  
-  &--right {
-    margin-inline-start: auto;
   }
 }

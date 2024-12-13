@@ -12,23 +12,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
-    "@storybook/addon-essentials": "^8.3.6",
-    "@storybook/addon-interactions": "^8.3.6",
-    "@storybook/addon-links": "^8.3.6",
-    "@storybook/blocks": "^8.3.6",
-    "@storybook/html": "^8.3.6",
-    "@storybook/html-vite": "^8.3.6",
-    "@storybook/test": "^8.3.6",
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/html": "^8.4.7",
+    "@storybook/html-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "postcss-load-config": "^6.0.1",
     "postcss-loader": "^8.1.1",
-    "storybook": "^8.3.6",
+    "storybook": "^8.4.7",
     "vite-plugin-twig-drupal": "^1.4.2"
   },
   "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^11.7.3",
     "autoprefixer": "^10.4.20",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^6.2.0",
-    "storybook-addon-sdc": "^0.1.11"
+    "storybook-addon-sdc": "^0.5.1"
   }
 }
