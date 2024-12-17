@@ -1,27 +1,55 @@
 # This is so your IDE knows about the syntax for fixes and autocomplete.
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
-
-# The human readable name.
 name: Header
-
-# Status can be: "experimental", "stable", "deprecated", "obsolete".
 status: experimental
 
-# Schema for the props. We support www.json-schema.org. Learn more about the
-# syntax there.
 props:
-  # Props are always an object with keys. Each key is a variable in your
-  # component template.
   type: object
-
-  properties:
-    label:
-      type: string
-
-libraryOverrides:
-  dependencies:
-    - core/drupal
-    - core/once
+      
+slots:
+  # content:
+  #   title: Content
+  #   examples:
+  #     - Xxxx content
+  branding:
+  - type: component
+    component: "storybook-university:branding"
+    slots:
+      site_name: Storybook University
+  #     
+# slots:
+#   branding:
+#   - type: component
+#     component: "storybook-university:branding"
+#     slots:
+#       site_name:
+#         type: string
+#         examples:
+#           - Storybook University
+#       site_logo:
+#         type: string
+#         examples:
+#         - "../src/images/colorwheel.svg"
+#       site_slogan:
+#         type: string
+#         examples:
+#           - 'A Higher Education Design System Demo'
+  # properties:
+  #   label:
+  #     type: string
+# 
+# slots:
+#   content:
+#     - type: component
+#       component: "storybook-university:branding"
+#       examples:
+#           - Xxxxxx
+#               
+# # 
+# libraryOverrides:
+#   dependencies:
+#     - core/drupal
+#     - core/once
  
 js:
  header.js: { attributes: { defer: true } }
@@ -29,17 +57,15 @@ js:
 thirdPartySettings:
   sdcStorybook:
     stories:
+      
       preview:
-        props:
-          html_tag: "div"
         slots:
           branding:
             - type: component
               component: "storybook-university:branding"
-              slots:
-                site_name: 'Storybook University'
-                site_slogan: 'A Higher Education Design System Demo'
-                site_logo: "../src/images/colorwheel.svg"
+              # slots:
+              #   site_name: Storybook University
+
           menu_toggle:
             - type: component
               component: "storybook-university:button" 
@@ -54,8 +80,6 @@ thirdPartySettings:
                   - button--ghost
                   - button--icon
               slots:
-                required:
-                  - icon
                 icon: menu-open
                 content: open   
           menu_main:
@@ -66,18 +90,3 @@ thirdPartySettings:
                   - main-menu
                 extra_classes:
                   - menu--main
-                  - menu--horizontal
-              slots:
-                items:
-                  items:
-                    title:
-                      - Home
-                      - About
-                      - Programs
-                      - Events
-                    url:
-                      - https://wikipedia.org
-                      - https://nasa.gov
-                      - https://lunarfusion.com
-                      - https://www.futurity.org
- 

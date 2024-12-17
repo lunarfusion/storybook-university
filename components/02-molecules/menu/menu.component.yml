@@ -32,13 +32,12 @@ props:
               - https://www.futurity.org
         required:
           - title
-          - url
 
-slots:
-  # The key is the name of the slot. In your template you will use
-  # {% block content %}.
-  title:
-    title: Title
+# slots:
+#   # The key is the name of the slot. In your template you will use
+#   # {% block content %}.
+#   title:
+#     title: Title
 
 thirdPartySettings:
   sdcStorybook:

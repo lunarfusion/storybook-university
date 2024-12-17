@@ -2,23 +2,40 @@ a {
   position: relative;
   color: var(--em-color-link-default);
   font-weight: 500;
+  text-decoration: none;
   transition: var(--em-transition-basic);
   border-radius: var(--em-size-radius-sm);
   
+  background: linear-gradient(to right,
+      var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
+      var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 300% 2px;
+  background-position: 98% 100%;
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+  
+  /* focus indicator */
   border: var(--em-size-thickness-focus-indicator) solid transparent;
   
-  &:hover {
+  &:hover,
+  &:visited:hover {
     color: var(--em-color-link-hover);
+    background-position: 2% 100%;
   }
   
   &:focus,
-  &:focus-visible {
+  &:focus-visible,
+  &:visited:focus,
+  &:visited:focus-visible {
     color: var(--em-color-link-focus);
     outline: 0;
     border-color: var(--em-color-focus-indicator);
   }
   
-  &:active {
+  &:active,
+  &:visited:active {
     color: var(--em-color-link-active);
     border-color: transparent;
     outline: none;
@@ -40,28 +57,6 @@ a {
   &:visited {
     color: var(--em-color-link-visited);
   }
-  
-  /*** Paragraph content links ***/
-  p &:not(.button),
-  ol:not(.tabs) li:not(.menu-item) &,
-  ul:not(.tabs) li:not(.menu-item) & {
-    position: relative;
-    text-decoration: none;
-    
-    background: linear-gradient(to right,
-        var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
-        var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-size: 300% 2px;
-    background-position: 98% 100%;
-    box-decoration-break: slice;
-    -webkit-box-decoration-break: slice;
-    
-    &:hover {
-      background-position: 2% 100%;
-    }
-  }
 }
 
 
@@ -71,36 +66,34 @@ p:has(.cta-link) {
 
 /*** CTA links ***/
 .cta-link {
-  display: inline-flex;
-  position: relative;
-  padding-inline-end: 1.5rem;
-  margin-inline-start: auto;
+  --cta-icon-transform: 0.25rem;
   
+  display: inline-flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-block: 0.125rem;
+  padding-inline-start: 0.125rem;
+  padding-inline-end: 1rem;
+  margin-inline-start: auto;
   font-family: var(--em-font-secondary);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.15rem;
   
-  a {
-    font-family: var(--em-font-secondary);
-    text-decoration: none;
-    font-size: 1.15rem;
-    font-weight: 600;
-    background: linear-gradient(to right,
-        var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
-        var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-size: 300% 3px;
-    background-position: 98% 100%;
-    box-decoration-break: slice;
-    -webkit-box-decoration-break: slice;
-    
-    &:hover {
-      background-position: 1% 100%;
-    }
-  }
+  background: linear-gradient(to right,
+      var(--em-color-link-decoration-02) 0%, var(--em-color-link-decoration-02) 50%,
+      var(--em-color-link-decoration-01) 51%, var(--em-color-link-decoration-01) 100%);
+  background-repeat: no-repeat;
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+  background-size: 300% 3px;
   
+  background-position: 90% 100%;
+  
+  
+  &:hover {
+    background-position: 10% 100%;
+  }
   
   &::after {
     content: "";
@@ -110,15 +103,16 @@ p:has(.cta-link) {
     top: 0;
     bottom: 0;
     right: 0;
-    margin: auto;
-    margin-inline-start: 0.5rem;
+    left: calc(100% + var(--cta-icon-transform));
+    margin-block: auto;
+    margin-inline-start: auto;
     background-color: var(--em-color-fg-secondary);
-    mask-image: url('../images/arrow-right.svg');
+    mask-image: url('../src/icons/arrow-forward.svg');
+    mask-repeat: no-repeat;
     transition: var(--em-transition-boing);
-    transform: translateX(-0.25rem);
   }
   
   &:hover::after {
-    transform: translateX(0);
+    transform: translateX(var(--cta-icon-transform));
   }
 }

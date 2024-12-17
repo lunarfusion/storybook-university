@@ -246,9 +246,15 @@
     gap: 0.25rem;
     border-radius: 0;
     border-width: 0;
+    border-color: transparent;
     border-inline-start-width: 2px;
     color: var(--em-color-fg-white-static);
     z-index: 2;
+    
+    &:hover,
+    &:focus {
+      border-color: transparent;
+    }
     
     &::after {
       border-radius: 0;

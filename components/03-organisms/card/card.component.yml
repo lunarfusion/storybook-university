@@ -5,34 +5,59 @@ status: experimental
 props:
   type: object
 
-# WIP: use atom component within molecule, testing atoms/title 
+# # WIP: use atom component within molecule, testing atoms/title 
 slots:
-  content:
-    title: Content
-    required: true
-    description: The card content.
-    examples:
-      - Why is this here if it does not represent the components a card contains?
-  
+  card_title:
+    - type: component
+      component: "storybook-university:title"
+      props:
+        extra_classes:
+          - card__title
+      slots:
+        text: Title of the Card Component
+  card_tag:
+    - type: component
+      component: "storybook-university:tag"
+      props:
+        extra_classes:
+          - card__tag
+      slots:
+        tag_content: 'Category'
+        tag_icon: shield-u
+  card_summary:
+    - type: component
+      component: "storybook-university:paragraph"
+      props:
+        extra_classes:
+          - card__summary
+      slots:
+        content: Summary of the content which this card is linking the visitor to.
+  card_link:
+    - type: component
+      component: "storybook-university:button"
+      props:
+        extra_classes:
+          - card__link
+          - button--ghost
+          - button--right
+      slots:
+        content: Card Link
+          
 thirdPartySettings:
   sdcStorybook:
     stories:
-      preview:
+      
+      default:
         props:
           html_tag: "div"
         slots:
-          card_image:
-          - type: component
-            component: "storybook-university:image"
-            props:
-              extra_classes:
-                - card__image
           card_title:
             - type: component
               component: "storybook-university:title"
               props:
+                html_tag: h3
                 extra_classes:
-                  - title
+                  - card__title
               slots:
                 text: Title of the Card Component
           card_tag:
@@ -42,7 +67,7 @@ thirdPartySettings:
                 extra_classes:
                   - card__tag
               slots:
-                tag_content: 'blahblah'
+                tag_content: 'Category'
                 tag_icon: shield-u
           card_summary:
             - type: component
@@ -64,14 +89,95 @@ thirdPartySettings:
                   content: Card Link
                   
 # How to do variants?
-      vertical:
-        title: Vertical/default
+    # large:
+    #   title: Large Card
+    #   props:
+    #     extra_classes:
+    #       - card--large
+      small:
+        title: Small
         props:
           extra_classes:
-            - card--vertical
-      horizontal:
-            title: Horizontal
-            props:
-              extra_classes:
-                - card--horizontal
+            - card--small
+        slots:
+          card_title:
+            - type: component
+              component: "storybook-university:title"
+              props:
+                html_tag: h4
+                extra_classes:
+                  - card__title
+                  - card__title--small
+              slots:
+                text: Title of the Card Component
+          card_tag:
+            - type: component
+              component: "storybook-university:tag"
+              props:
+                extra_classes:
+                  - card__tag
+              slots:
+                tag_content: 'Category'
+                tag_icon: shield-u
+          card_summary:
+            - type: component
+              component: "storybook-university:paragraph"
+              props:
+                extra_classes:
+                  - card__summary
+              slots:
+                content: Summary of the content which this card is linking the visitor to.
+          card_link:
+            - type: component
+              component: "storybook-university:button"
+              props:
+                extra_classes:
+                  - card__link
+                  - button--ghost
+                  - button--right
+                  - button--small
+              slots:
+                  content: Card Link
 
+      horizontal:
+        title: Horizontal
+        props:
+          extra_classes:
+            - card--horizontal
+        slots:
+          card_title:
+            - type: component
+              component: "storybook-university:title"
+              props:
+                html_tag: h3
+                extra_classes:
+                  - card__title
+              slots:
+                text: Title of the Card Component
+          card_tag:
+            - type: component
+              component: "storybook-university:tag"
+              props:
+                extra_classes:
+                  - card__tag
+              slots:
+                tag_content: 'Category'
+                tag_icon: shield-u
+          card_summary:
+            - type: component
+              component: "storybook-university:paragraph"
+              props:
+                extra_classes:
+                  - card__summary
+              slots:
+                content: Summary of the content which this card is linking the visitor to.
+          card_link:
+            - type: component
+              component: "storybook-university:button"
+              props:
+                extra_classes:
+                  - card__link
+                  - button--ghost
+                  - button--right
+              slots:
+                  content: Card Link

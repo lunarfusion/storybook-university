@@ -1,16 +1,8 @@
-{%
-  set classes = [
-    'header',
-    'drk-background',
-    'region',
-    'region--' ~ region|clean_class,
-  ]
-%}
-
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass('header') }}>
   {% block branding %}{{ branding }}{% endblock %}
-
-    {% block button %}{{ menu_toggle }}{% endblock %}
+  {% block button %}{{ menu_toggle }}{% endblock %}
+  
+  <div class="menu--wrapper" id="main-menu-hider">
     {% block menu %}{{ menu_main }}{% endblock %}
-
+  </div>
 </div>

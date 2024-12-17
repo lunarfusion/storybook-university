@@ -13,8 +13,7 @@ props:
       enum:
         - true
         - false
-      default: true
-                                           
+      default: false                                        
 slots:
   content:
     title: Content
@@ -22,45 +21,71 @@ slots:
     description: Content of the badge.
     examples:
        - Badge
-  icon:
-     title: Icon
-     required: false
-     description: Optional badge icon
-     examples:
-       - circle-dot-solid
-         
+                        
 thirdPartySettings:
   sdcStorybook:
    stories: 
      informative:
-        title: Informative
-        props:
-          extra_classes:
-          - badge--informative
-        slots:
-          content: Informative Badge
-          icon: circle-info-solid
+      title: Informative
+      props:
+        has_icon: true
+        extra_classes:
+        - badge--informative
+      slots:
+        content: Informative Badge
+        badge_icon:
+          - type: component
+            component: "storybook-university:icon"
+            props:
+              icon: circle-check-solid
+              extra_classes:
+                - badge__icon
+                - icon--small
      positive:
-        title: Positive
-        props:
-          extra_classes:
-            - badge--positive  
-        slots:
-          content: Success Badge
-          icon: circle-check-solid
+      title: Positive
+      props:
+        has_icon: true
+        extra_classes:
+          - badge--positive  
+      slots:
+        content: Success Badge
+        badge_icon:
+        - type: component
+          component: "storybook-university:icon"
+          props:
+            icon: circle-check-solid
+            extra_classes:
+              - badge__icon
+              - icon--small
      warning:
        title: Warning
        props:
+         has_icon: true
          extra_classes:
            - badge--warning 
        slots:
-          content: Warning Badge
-          icon: triangle-exclamation-solid                 
+        content: Warning Badge
+        badge_icon:
+        - type: component
+          component: "storybook-university:icon"
+          props:
+            icon: triangle-exclamation-solid
+            extra_classes:
+              - badge__icon
+              - icon--small               
      negative:
         title: Negative
         props:
+          has_icon: true
           extra_classes:
             - badge--negative    
         slots:
-            content: Error Badge
-            icon: circle-xmark-solid
+          content: Error Badge
+          badge_icon:
+            - type: component
+              component: "storybook-university:icon"
+              props:
+                icon: circle-xmark-solid
+                extra_classes:
+                  - badge__icon
+                  - icon--small

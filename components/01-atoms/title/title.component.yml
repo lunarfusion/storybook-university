@@ -6,8 +6,10 @@ props:
   properties:
     html_tag:
       type: string
-      description: xxxxxx is either a xxxxxx or a link that looks like a xxxxxx.
+      description: xxxxxx
       enum:
+        - h1
+        - h2
         - h3
         - h4
 slots:
@@ -16,3 +18,54 @@ slots:
     title: Title text
     examples:
       - Title of a Component's Content
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      page_title:
+        title: Page Title H1
+        slots:
+          text: Title of the Page
+        props:
+          html_tag: h1
+          extra_classes:
+            - page-title
+          
+      section_title:
+        title: Section Title H2
+        slots:
+          text: Title of a Section
+        props:
+          html_tag: h2
+          extra_classes:
+            - section-title
+
+      card_title:
+        title: Title of a Card
+        slots:
+          text: Card Title
+        props:
+          html_tag: h3
+          extra_classes:
+            - card__title
+# 
+# 
+#       card_title_large:
+#         title: Title of a Large Card
+#         slots:
+#           text: Card Title
+#         props:
+#           html_tag: h3
+#           extra_classes:
+#             - card__title
+#             - card__title--large
+# 
+#       card_title_mediun:
+#         title: Title of a Medium Card
+#         slots:
+#           text: Card Title
+#         props:
+#           html_tag: h4
+#           extra_classes:
+#             - card__title
+#             - card__title--medium

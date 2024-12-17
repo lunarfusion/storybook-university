@@ -37,12 +37,14 @@
     align-items: stretch;
     flex: 0 0 10%;
     
-    /* width: 100px;
-    min-width: 100px; */
-    
     .site-logo {
       position: relative;
       width: 100%;
+    }
+    
+    a {
+      text-decoration: none;
+      background: transparent;
     }
   }
   
@@ -84,6 +86,7 @@
     /* Site name text */
     a {
       text-decoration: none;
+      background: transparent;
       
       font-size: 2.4rem;
       line-height: 1;
@@ -98,29 +101,19 @@
       
       color: var(--em-color-fg-white-static);
     }
+    
+    a:hover,
+    a:focus {
+      color: var(--em-color-fg-white-static);
+    }
   }
   
   
   @media (max-width: 992px) {
     & {
-      
-      .branding__row {
-        /* display: flex; */
-        /* flex-direction: column;
-        flex-wrap: nowrap; */
-        /* align-items: flex-start; */
-        /* justify-content: flex-start; */
-        /* gap: 0;
-        margin-left: 0;
-        max-width: calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component));
-        flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component)); */
-      }
-      
       .branding__logo {
         flex: 0 0 15%;
         max-width: 15%;
-        /* max-width: 4.5rem;
-        min-width: 4.5rem; */
       }
       
       .branding__site-name-slogan {
@@ -151,15 +144,11 @@
       
       .branding__row {
         display: flex;
-        /* flex-direction: column; */
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-start;
         gap: 0;
         margin-left: 0;
-        /* max-width: calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component));
-        flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle) - var(--em-size-inner-horiz-component)); */
-        
         flex: 0 0 calc(100% - var(--em-size-mobile-menu-toggle));
       }
       
@@ -171,10 +160,6 @@
   
   
   @media (max-width: 576px) {
-    .branding__logo {
-      /* max-width: 3.5rem;
-      min-width: 3.5rem; */
-    }
     
     &__site-name {
       

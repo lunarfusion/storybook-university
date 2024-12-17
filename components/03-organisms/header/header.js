@@ -13,11 +13,12 @@
     mainMenu.classList.add("menu-closed");
     
     // Attach both mouse and keyboard to function
+    // WIP - focus keydown does not work in Storybook
     ['mousedown', 'focus.keydown'].forEach(event => menuTrigger.addEventListener(event, showHideMenu));
       
     function showHideMenu(event) {
       // preventDefault so focus does not fire on click
-      event.preventDefault();
+      // event.preventDefault();
     
       // Search-open removes the closed transform from the form it contains
       mainMenu.classList.toggle("menu-opened");

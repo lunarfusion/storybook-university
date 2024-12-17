@@ -11,10 +11,20 @@ slots:
     required: true
     description: Content of the Link
     examples:
-    - Link Text
+      - Link Text
   link_url:
-   title: URL
-   required: true
-   description: URL destination of the link
-   examples:
-   - https://www.wikipedia.org
+    title: URL
+    required: true
+    description: URL destination of the link
+    examples:
+      - https://www.wikipedia.org
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      
+      cta_link:
+        title: Call-to-action Link
+        props:
+          extra_classes:
+            - cta-link

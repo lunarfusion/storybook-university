@@ -17,7 +17,7 @@ props:
         - h5
         - h6
       default: h2
-          
+
 slots:
   title_prefix:
     type: object
@@ -30,18 +30,20 @@ slots:
     required: true
     description: Content of the Heading.
     examples:
-    - Sphinx of Black Quartz, Judge My Vow
-      
-thirdPartySettings:
-  sdcStorybook:
-    stories:
-      section_title:
-        title: Section Title H2
-        props:
-          extra_classes:
-            - section-title
-      page_title:
-            title: Page Title H1
-            props:
-              extra_classes:
-                - page-title
+      - Sphinx of Black Quartz, Judge My Vow
+# 
+# thirdPartySettings:
+#   sdcStorybook:
+#     stories:
+#       
+#       section_title:
+#         title: Section Title H2
+#         props:
+#           extra_classes:
+#             - section-title
+#             
+#       page_title:
+#         title: Page Title H1
+#         props:
+#           extra_classes:
+#             - page-title

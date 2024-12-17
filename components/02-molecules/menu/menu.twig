@@ -1,7 +1,6 @@
 {% import _self as menus %}
 
-<div class="menu-wrapper" id="main-menu-hider">
-  {% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -27,5 +26,4 @@
       </ul>
     {% endif %}
   {% endmacro %}
-</div>
 {{ menus.menu_links(items, attributes) }}

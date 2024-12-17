@@ -22,6 +22,10 @@
     padding: 1rem;
   }
   
+  &__content p {
+    font-size: var(--em-size-text-med);
+  }
+  
   &__title {
     margin-block-start: 0;
     border-inline-start: 6px solid var(--em-color-border-tertiary);
@@ -81,13 +85,22 @@
   }
   
   /*** Variants **/
+  &--small {
+    max-width: calc(var(--em-size-container-width) * 0.25);
+    min-width: 160px;
+    
+    .card__content p {
+      font-size: var(--em-size-text-small);
+    }
+  }
+  
+  
   &--horizontal {
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
     justify-content: flex-start;
   }
-  
   
   /*** Content Region = Card is horizontal ***/
   .region--content &,

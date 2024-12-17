@@ -31,32 +31,6 @@ h2,
   font-size: 2.5rem;
   line-height: 1.11;
   margin-block-start: 1.5rem;
-  
-  /* has flag indicator - is in content region OR has section-heading class */
-  .region--content &,
-  &.section-title {
-    position: relative;
-    display: block;
-    padding-block-start: 1.5rem;
-  }
-  
-  .region--content &::before,
-  &.section-title::before {
-    --flag-height: 12px;
-    --notch-calc: calc(100% - var(--flag-height));
-    
-    content: "";
-    width: 5rem;
-    height: var(--flag-height);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--em-color-border-tertiary);
-    transform: translateX(calc((var(--em-size-baseline) + var(--flag-height) + var(--em-size-col-padding)) * -1));
-    overflow: hidden;
-    border-end-end-radius: var(--flag-height);
-    border-start-start-radius: var(--flag-height);
-  }
 }
 
 h3,

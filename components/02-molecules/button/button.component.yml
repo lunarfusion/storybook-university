@@ -15,7 +15,7 @@ props:
       type: string
       title: Button URL
       format: iri-reference
-      default: http://lunarfusion.com
+      default: http://wikipedia.com
     
     input_id:
       format: iri-reference
@@ -28,6 +28,7 @@ props:
       enum:
         - true
         - false
+      default: false
 
     menu_toggler:
       type: string
