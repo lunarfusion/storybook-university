@@ -38,6 +38,18 @@ props:
         - true
         - false
       default: false
+      
+    variant:
+      type: string
+      title: Type
+      description: 'Button type: primary, secondary, tertiary.'
+      default: primary
+      enum:
+        - primary
+        - secondary
+        - tertiary
+      examples:
+        - primary
                    
 slots:
   # Content to display in the button
@@ -53,9 +65,6 @@ slots:
     description: Optional button icon
     examples:
       - arrow-forward
-
-js:
-  button.js: { attributes: { defer: true } } 
       
 thirdPartySettings:
   sdcStorybook:

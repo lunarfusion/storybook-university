@@ -48,24 +48,3 @@ thirdPartySettings:
           html_tag: h3
           extra_classes:
             - card__title
-# 
-# 
-#       card_title_large:
-#         title: Title of a Large Card
-#         slots:
-#           text: Card Title
-#         props:
-#           html_tag: h3
-#           extra_classes:
-#             - card__title
-#             - card__title--large
-# 
-#       card_title_mediun:
-#         title: Title of a Medium Card
-#         slots:
-#           text: Card Title
-#         props:
-#           html_tag: h4
-#           extra_classes:
-#             - card__title
-#             - card__title--medium

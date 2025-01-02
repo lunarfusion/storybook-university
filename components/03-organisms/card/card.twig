@@ -1,12 +1,25 @@
-<div{{attributes.addClass('card').addClass(extra_classes|default([])) }}>
+<div{{attributes.addClass('card').addClass(card_classes|default([])) }}>
   <div class="card__content">
-    {% block card_title %}{{ card_title }}{% endblock %}
-    {% block card_tag %}{{ card_tag }}{% endblock %}
-    {% block card_summary %}{{ card_summary }}{% endblock %}
-    {% block card_link %}{{ card_link }}{% endblock %}
+    {{ content }}
+    
+    {% block title %}{{ card_title }}{% endblock %}
+
+    <div class="blocky-block-block">
+      {{ description|raw }}
+      {% include "components/02-molecules/button/button.twig" with {
+        html_tag: 'a',
+        variant: 'ghost',
+      } %}
+    </div>
   </div>
 
-  <div class="card__image">
-    <img src="../src/images/placeholder-600-400.jpg" />
-  </div> 
+
+  {% if card_image %}
+    <div class="card__image">
+      <img src="{{ card_image }}" alt="placeholder" />
+    </div>
+  {% endif %}
 </div>
+
+
+

@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Button v2
+status: experimental
+# this doesn't work
+
+props:
+  type: object
+  
+required:
+  - linkText
+properties:
+    
+  linkText:
+    type: text
+    title: The link Text
+    description: Text to click on.
+    
+  link:
+    type: text
+    title: The URL of the button
+    description: The button URL.
+    
+  buttonType:
+    type: text
+    title: The button type
+    description: Button is primary or secondary.
+    
+slots:
+    # Content to display in the button
+    button_content:
+        title: Button Content
+        description: Content of the button

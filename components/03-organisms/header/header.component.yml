@@ -5,52 +5,7 @@ status: experimental
 
 props:
   type: object
-      
-slots:
-  # content:
-  #   title: Content
-  #   examples:
-  #     - Xxxx content
-  branding:
-  - type: component
-    component: "storybook-university:branding"
-    slots:
-      site_name: Storybook University
-  #     
-# slots:
-#   branding:
-#   - type: component
-#     component: "storybook-university:branding"
-#     slots:
-#       site_name:
-#         type: string
-#         examples:
-#           - Storybook University
-#       site_logo:
-#         type: string
-#         examples:
-#         - "../src/images/colorwheel.svg"
-#       site_slogan:
-#         type: string
-#         examples:
-#           - 'A Higher Education Design System Demo'
-  # properties:
-  #   label:
-  #     type: string
-# 
-# slots:
-#   content:
-#     - type: component
-#       component: "storybook-university:branding"
-#       examples:
-#           - Xxxxxx
-#               
-# # 
-# libraryOverrides:
-#   dependencies:
-#     - core/drupal
-#     - core/once
- 
+         
 js:
  header.js: { attributes: { defer: true } }
     
@@ -58,13 +13,13 @@ thirdPartySettings:
   sdcStorybook:
     stories:
       
-      preview:
+      default:
+        props:
+          label: Site header    
         slots:
           branding:
             - type: component
               component: "storybook-university:branding"
-              # slots:
-              #   site_name: Storybook University
 
           menu_toggle:
             - type: component
@@ -81,7 +36,8 @@ thirdPartySettings:
                   - button--icon
               slots:
                 icon: menu-open
-                content: open   
+                content: open  
+                 
           menu_main:
             - type: component
               component: "storybook-university:menu"

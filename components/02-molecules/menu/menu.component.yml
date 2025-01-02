@@ -3,8 +3,6 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schema
 name: Menu
 status: experimental
 
-# Schema for the props. We support www.json-schema.org. Learn more about the
-# syntax there.
 props:
   type: object
   
@@ -33,20 +31,16 @@ props:
         required:
           - title
 
-# slots:
-#   # The key is the name of the slot. In your template you will use
-#   # {% block content %}.
-#   title:
-#     title: Title
-
 thirdPartySettings:
   sdcStorybook:
     stories:
+      
       vertical:
         title: Vertical
         props:
           extra_classes:
             - menu--vertical
+            
       horizontal:
         title: Horizontal
         props:

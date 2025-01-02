@@ -22,6 +22,7 @@
   --em-color-fg-primary: var(--em-color-blue-020);
   --em-color-fg-primary-medium: var(--em-color-blue-040);
   --em-color-fg-secondary: var(--em-color-cyan-020);
+  --em-color-fg-tertiary: var(--em-color-yellow-060);
   
   /*** Backgrounds - Base Theme ***/
   --em-color-bg-primary-dark: var(--em-color-blue-010);

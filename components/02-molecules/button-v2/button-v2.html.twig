@@ -1,0 +1,10 @@
+
+{%
+  set classes = [
+  'button',
+  'button--' ~ buttonType|clean_class,
+]
+%}
+<a class="{{ classes|join(" ") }}" href="{{ link }}">
+  {% block button_content %}{% endblock %}
+</a>

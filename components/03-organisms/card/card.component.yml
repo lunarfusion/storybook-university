@@ -5,52 +5,60 @@ status: experimental
 props:
   type: object
 
-# # WIP: use atom component within molecule, testing atoms/title 
+### This is where I am trying new ideas for structure of parent and child components
+
+# basic - slots of parent component should be only "content", which sdcStorybook will populate with the child components
 slots:
-  card_title:
+
+  ### THIS COMPONENT CONTENT
+  # content:
+  #   title: Content
+  #   examples:
+  #     - Card content, placeholder for child components
+
+  content:    
+    # no block names here, just start with type: component
+    ### CHILD COMPONENT 
     - type: component
       component: "storybook-university:title"
       props:
+        html_tag: h3
         extra_classes:
           - card__title
       slots:
-        text: Title of the Card Component
-  card_tag:
-    - type: component
-      component: "storybook-university:tag"
-      props:
-        extra_classes:
-          - card__tag
-      slots:
-        tag_content: 'Category'
-        tag_icon: shield-u
-  card_summary:
-    - type: component
-      component: "storybook-university:paragraph"
-      props:
-        extra_classes:
-          - card__summary
-      slots:
-        content: Summary of the content which this card is linking the visitor to.
-  card_link:
-    - type: component
-      component: "storybook-university:button"
-      props:
-        extra_classes:
-          - card__link
-          - button--ghost
-          - button--right
-      slots:
-        content: Card Link
-          
+        text: sdcStorybook Title of the Card Component   
+  ### CHILD COMPONENT - this won't render, screws up storybook
+  # card_title:
+  #   - type: component
+  #     component: "storybook-university:title"
+  #     props:
+  #       html_tag: h3
+  #       extra_classes:
+  #         - card__title
+  #     slots:
+  #       text: Title of the Card Component
+
+  ### THIS COMPONENT CONTENT
+  card_image:
+    title: Card Image
+    required: false
+    description: Image for the card
+    type: string
+    examples:
+      - "../src/images/placeholder-600-400.jpg"
+  
+               
 thirdPartySettings:
   sdcStorybook:
     stories:
       
+      ### VARIANT - default vertical card style
       default:
         props:
-          html_tag: "div"
+          label: Card default style
         slots:
+          
+          ### CHILD COMPONENT 
           card_title:
             - type: component
               component: "storybook-university:title"
@@ -60,124 +68,10 @@ thirdPartySettings:
                   - card__title
               slots:
                 text: Title of the Card Component
-          card_tag:
-            - type: component
-              component: "storybook-university:tag"
-              props:
-                extra_classes:
-                  - card__tag
-              slots:
-                tag_content: 'Category'
-                tag_icon: shield-u
-          card_summary:
-            - type: component
-              component: "storybook-university:paragraph"
-              props:
-                extra_classes:
-                  - card__summary
-              slots:
-                content: Summary of the content which this card is linking the visitor to.
-          card_link:
-             - type: component
-               component: "storybook-university:button"
-               props:
-                 extra_classes:
-                   - card__link
-                   - button--ghost
-                   - button--right
-               slots:
-                  content: Card Link
-                  
-# How to do variants?
-    # large:
-    #   title: Large Card
-    #   props:
-    #     extra_classes:
-    #       - card--large
-      small:
-        title: Small
-        props:
-          extra_classes:
-            - card--small
-        slots:
-          card_title:
-            - type: component
-              component: "storybook-university:title"
-              props:
-                html_tag: h4
-                extra_classes:
-                  - card__title
-                  - card__title--small
-              slots:
-                text: Title of the Card Component
-          card_tag:
-            - type: component
-              component: "storybook-university:tag"
-              props:
-                extra_classes:
-                  - card__tag
-              slots:
-                tag_content: 'Category'
-                tag_icon: shield-u
-          card_summary:
-            - type: component
-              component: "storybook-university:paragraph"
-              props:
-                extra_classes:
-                  - card__summary
-              slots:
-                content: Summary of the content which this card is linking the visitor to.
-          card_link:
-            - type: component
-              component: "storybook-university:button"
-              props:
-                extra_classes:
-                  - card__link
-                  - button--ghost
-                  - button--right
-                  - button--small
-              slots:
-                  content: Card Link
 
-      horizontal:
-        title: Horizontal
-        props:
-          extra_classes:
-            - card--horizontal
-        slots:
-          card_title:
-            - type: component
-              component: "storybook-university:title"
-              props:
-                html_tag: h3
-                extra_classes:
-                  - card__title
-              slots:
-                text: Title of the Card Component
-          card_tag:
-            - type: component
-              component: "storybook-university:tag"
-              props:
-                extra_classes:
-                  - card__tag
-              slots:
-                tag_content: 'Category'
-                tag_icon: shield-u
-          card_summary:
-            - type: component
-              component: "storybook-university:paragraph"
-              props:
-                extra_classes:
-                  - card__summary
-              slots:
-                content: Summary of the content which this card is linking the visitor to.
-          card_link:
-            - type: component
-              component: "storybook-university:button"
-              props:
-                extra_classes:
-                  - card__link
-                  - button--ghost
-                  - button--right
-              slots:
-                  content: Card Link
+      ### VARIANT - horizontal layout
+      # horizontal:
+      #   props:
+      #     label: horizontal default style
+      #     extra_classes:
+      #       - card--horizontal
